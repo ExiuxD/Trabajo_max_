@@ -1,39 +1,574 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap - Prebuilt Layout</title>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAX - Diseñador</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap-5.3.8.css" rel="stylesheet"> 
-   
-  </head>
-  <body style="background-color: #4B4B4B">
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap-5.3.8.css" rel="stylesheet">
 
-  <nav class="navbar navbar-expand" style="background-color: #7FB52C"> <a class="navbar-brand" href="#7FB52C">imgg</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item active"> <a class="nav-link" href="#"> <span class="visually-hidden">(current)</span></a> </li>
-        <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
-        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a> </div>
-        </li>
-        <li class="nav-item"> <a class="nav-link disabled" href="#">Disabled</a> </li>
-      </ul>
-      <form class="d-flex my-2 my-lg-0">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ============================================================
+       ESTILOS GENERALES
+  ============================================================ -->
+  <style>
+    /* ---- Variables de color ---- */
+    :root {
+      --verde:   #7FB52C;
+      --negro:   #1a1a1a;
+      --gris:    #4B4B4B;
+      --blanco:  #FFFFFF;
+      --gris-claro: #2e2e2e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--negro);
+      color: var(--blanco);
+      font-family: 'Barlow', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ---- Tipografía display ---- */
+    .display-font { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; }
+
+    /* ---- Separadores de sección ---- */
+    .section-banner {
+      background-color: var(--verde);
+      padding: 18px 40px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 6px;
+      color: var(--negro);
+      text-align: center;
+    }
+  </style>
+
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav class="navbar navbar-expand-lg" style="background-color: var(--verde, #7FB52C); padding: 10px 30px;">
+
+  <!-- Logo MAX -->
+  <a class="navbar-brand" href="#">
+    <span style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:#1a1a1a; letter-spacing:3px;">
+      <span style="color:#1a1a1a;">MAX</span>
+    </span>
+  </a>
+
+  <!-- Toggler móvil -->
+  <button class="navbar-toggler" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMain"
+          aria-controls="navbarMain"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          style="border-color:#1a1a1a;">
+    <span class="navbar-toggler-icon" style="filter:invert(1);"></span>
+  </button>
+
+  <!-- Links -->
+  <div class="collapse navbar-collapse" id="navbarMain">
+    <ul class="navbar-nav ms-auto gap-3">
+      <li class="nav-item">
+        <a class="nav-link fw-600"
+           href="#quien-soy"
+           style="color:#1a1a1a; font-family:'Barlow',sans-serif; font-weight:600;">
+          Quién soy
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link fw-600"
+           href="#servicios"
+           style="color:#1a1a1a; font-family:'Barlow',sans-serif; font-weight:600;">
+          Servicios
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link fw-600"
+           href="#galeria"
+           style="color:#1a1a1a; font-family:'Barlow',sans-serif; font-weight:600;">
+          Galería
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link fw-600"
+           href="#contactos"
+           style="color:#1a1a1a; font-family:'Barlow',sans-serif; font-weight:600;">
+          Contactos
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- /NAVBAR -->
+
+
+<!-- ============================================================
+     HERO / BANNER PRINCIPAL
+============================================================ -->
+<section id="hero" style="background-color:#2e2e2e; padding:0;">
+
+  <!-- Imagen hero (placeholder gris) -->
+  <div style="width:100%; height:380px; background-color:#3a3a3a; display:flex; align-items:center; justify-content:center;">
+    <span style="color:#666; font-size:1rem;">[ Imagen principal ]</span>
+  </div>
+
+  <!-- Cita / tagline -->
+  <div style="background-color:#1a1a1a; padding:50px 30px; text-align:center;">
+    <p style="font-family:'Bebas Neue',sans-serif;
+               font-size:clamp(2.5rem,6vw,4.5rem);
+               color:#fff;
+               line-height:1.1;
+               letter-spacing:2px;">
+      "algun<br>texto<br>aquí?"
+    </p>
+  </div>
+
+</section>
+<!-- /HERO -->
+
+
+<!-- ============================================================
+     BANNER: CONOCE AL DISEÑADOR
+============================================================ -->
+<div class="section-banner" id="quien-soy">
+  CONOCE &nbsp; AL &nbsp; DISEÑADOR
+</div>
+
+
+<!-- ============================================================
+     SECCIÓN: QUIÉN SOY
+============================================================ -->
+<section style="background-color:#1a1a1a; padding:60px 30px;">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+
+      <!-- Logo grande -->
+      <div class="col-md-5 text-center">
+        <span style="font-family:'Bebas Neue',sans-serif;
+                     font-size:clamp(4rem,10vw,7rem);
+                     color:#7FB52C;
+                     letter-spacing:4px;
+                     display:block;">
+          :MAX<span style="color:#fff;">✕</span>
+        </span>
+      </div>
+
+      <!-- Texto bio -->
+      <div class="col-md-7">
+        <h2 style="font-family:'Bebas Neue',sans-serif;
+                   font-size:2rem;
+                   color:#fff;
+                   letter-spacing:3px;
+                   margin-bottom:16px;">
+          TÍTULO
+        </h2>
+        <p style="color:#ccc; font-size:1rem; line-height:1.8;">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor
+          sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+          tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
+          minim veniam, quis nostrud exerci tation ullamcorper.
+        </p>
+      </div>
+
     </div>
-  </nav>
+  </div>
+</section>
+<!-- /QUIÉN SOY -->
 
-  <!-- Include all compiled plugins (below), or include individual files as needed --> 
-    <script src="js/popper-2.11.8.min.js"></script>
-    <script src="js/bootstrap-5.3.8.js"></script>
-  </body>
+
+<!-- ============================================================
+     BANNER: TODOS MIS SERVICIOS
+============================================================ -->
+<div class="section-banner" id="servicios">
+  TODOS &nbsp; MIS &nbsp; SERVICIOS
+</div>
+
+
+<!-- ============================================================
+     SECCIÓN: SERVICIOS
+============================================================ -->
+<section style="background-color:#1a1a1a; padding:60px 30px;">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Servicio 1 -->
+      <div class="col-md-6">
+        <div style="border-left:4px solid #7FB52C; padding-left:20px;">
+          <h3 style="font-family:'Bebas Neue',sans-serif;
+                     color:#7FB52C;
+                     font-size:1.4rem;
+                     letter-spacing:2px;
+                     margin-bottom:10px;">
+            MIS SERVICIOS
+          </h3>
+          <p style="color:#ccc; font-size:0.95rem; line-height:1.7;">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum
+            dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+            euismod tincidunt ut.
+          </p>
+        </div>
+      </div>
+
+      <!-- Servicio 2 -->
+      <div class="col-md-6">
+        <div style="border-left:4px solid #7FB52C; padding-left:20px;">
+          <h3 style="font-family:'Bebas Neue',sans-serif;
+                     color:#7FB52C;
+                     font-size:1.4rem;
+                     letter-spacing:2px;
+                     margin-bottom:10px;">
+            MIS SERVICIOS
+          </h3>
+          <p style="color:#ccc; font-size:0.95rem; line-height:1.7;">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum
+            dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+            euismod tincidunt ut.
+          </p>
+        </div>
+      </div>
+
+      <!-- Servicio 3 -->
+      <div class="col-md-6">
+        <div style="border-left:4px solid #7FB52C; padding-left:20px;">
+          <h3 style="font-family:'Bebas Neue',sans-serif;
+                     color:#7FB52C;
+                     font-size:1.4rem;
+                     letter-spacing:2px;
+                     margin-bottom:10px;">
+            MIS SERVICIOS
+          </h3>
+          <p style="color:#ccc; font-size:0.95rem; line-height:1.7;">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum
+            dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+            euismod tincidunt ut.
+          </p>
+        </div>
+      </div>
+
+      <!-- Servicio 4 -->
+      <div class="col-md-6">
+        <div style="border-left:4px solid #7FB52C; padding-left:20px;">
+          <h3 style="font-family:'Bebas Neue',sans-serif;
+                     color:#7FB52C;
+                     font-size:1.4rem;
+                     letter-spacing:2px;
+                     margin-bottom:10px;">
+            MIS SERVICIOS
+          </h3>
+          <p style="color:#ccc; font-size:0.95rem; line-height:1.7;">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum
+            dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+            euismod tincidunt ut.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- /SERVICIOS -->
+
+
+<!-- ============================================================
+     BANNER: GALERÍA DEL DISEÑADOR
+============================================================ -->
+<div class="section-banner" id="galeria">
+  GALERÍA &nbsp; DEL &nbsp; DISEÑADOR
+</div>
+
+
+<!-- ============================================================
+     SECCIÓN: RETOQUE DE FOTOGRAFÍA
+============================================================ -->
+<section style="background-color:#1a1a1a; padding:60px 30px;">
+  <div class="container">
+
+    <!-- Subtítulo -->
+    <h2 style="font-family:'Barlow',sans-serif;
+               font-size:1.8rem;
+               font-weight:700;
+               color:#fff;
+               margin-bottom:30px;">
+      Retoque de Fotografía
+    </h2>
+
+    <!-- Etiquetas Original / Edición -->
+    <div class="row mb-2">
+      <div class="col-6 col-md-5">
+        <span style="color:#aaa; font-size:0.9rem;">Original</span>
+      </div>
+      <div class="col-auto mx-auto text-center">
+        <span style="color:#aaa;">–</span>
+      </div>
+      <div class="col-6 col-md-5 text-end">
+        <span style="color:#aaa; font-size:0.9rem;">Edición</span>
+      </div>
+    </div>
+
+    <!-- Fila de fotos 1 -->
+    <div class="row gy-3 mb-3">
+      <div class="col-6">
+        <div style="background:#3a3a3a; border-radius:12px; aspect-ratio:1/1;
+                    display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <span style="color:#666; font-size:0.8rem;">Foto original</span>
+        </div>
+      </div>
+      <div class="col-6">
+        <div style="background:#3a3a3a; border-radius:12px; aspect-ratio:1/1;
+                    display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <span style="color:#666; font-size:0.8rem;">Foto editada</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fila de fotos 2 -->
+    <div class="row gy-3 mb-3">
+      <div class="col-6">
+        <div style="background:#3a3a3a; border-radius:12px; aspect-ratio:1/1;
+                    display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <span style="color:#666; font-size:0.8rem;">Foto original</span>
+        </div>
+      </div>
+      <div class="col-6">
+        <div style="background:#3a3a3a; border-radius:12px; aspect-ratio:1/1;
+                    display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <span style="color:#666; font-size:0.8rem;">Foto editada</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fila de fotos 3 -->
+    <div class="row gy-3">
+      <div class="col-6">
+        <div style="background:#3a3a3a; border-radius:12px; aspect-ratio:1/1;
+                    display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <span style="color:#666; font-size:0.8rem;">Foto original</span>
+        </div>
+      </div>
+      <div class="col-6">
+        <div style="background:#3a3a3a; border-radius:12px; aspect-ratio:1/1;
+                    display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <span style="color:#666; font-size:0.8rem;">Foto editada</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- /RETOQUE -->
+
+
+<!-- ============================================================
+     SECCIÓN: REDES SOCIALES (GALERÍA)
+============================================================ -->
+<section style="background-color:#1a1a1a; padding:40px 30px 60px;">
+  <div class="container">
+
+    <h2 style="font-family:'Barlow',sans-serif;
+               font-size:1.8rem;
+               font-weight:700;
+               color:#fff;
+               text-align:center;
+               margin-bottom:30px;">
+      Redes Sociales
+    </h2>
+
+    <!-- Grid de posts -->
+    <div class="row gy-3">
+      <div class="col-4">
+        <div style="background:#3a3a3a; border-radius:10px; aspect-ratio:9/16;
+                    display:flex; align-items:center; justify-content:center;">
+          <span style="color:#666; font-size:0.75rem; text-align:center;">Post 1</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="background:#2e2e2e; border-radius:10px; aspect-ratio:9/16;
+                    display:flex; align-items:center; justify-content:center;">
+          <span style="color:#666; font-size:0.75rem; text-align:center;">Post 2</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="background:#3a3a3a; border-radius:10px; aspect-ratio:9/16;
+                    display:flex; align-items:center; justify-content:center;">
+          <span style="color:#666; font-size:0.75rem; text-align:center;">Post 3</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="background:#2e2e2e; border-radius:10px; aspect-ratio:9/16;
+                    display:flex; align-items:center; justify-content:center;">
+          <span style="color:#666; font-size:0.75rem; text-align:center;">Post 4</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="background:#3a3a3a; border-radius:10px; aspect-ratio:9/16;
+                    display:flex; align-items:center; justify-content:center;">
+          <span style="color:#666; font-size:0.75rem; text-align:center;">Post 5</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div style="background:#2e2e2e; border-radius:10px; aspect-ratio:9/16;
+                    display:flex; align-items:center; justify-content:center;">
+          <span style="color:#666; font-size:0.75rem; text-align:center;">Post 6</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- /REDES GALERÍA -->
+
+
+<!-- ============================================================
+     SECCIÓN: EDICIÓN DE VIDEO
+============================================================ -->
+<section style="background-color:#1a1a1a; padding:40px 30px 60px;">
+  <div class="container">
+
+    <h2 style="font-family:'Barlow',sans-serif;
+               font-size:1.8rem;
+               font-weight:700;
+               color:#fff;
+               margin-bottom:30px;">
+      Edición de video
+    </h2>
+
+    <div class="row gy-3">
+
+      <!-- Video 1 -->
+      <div class="col-md-6">
+        <div style="background:#2e2e2e;
+                    border-radius:14px;
+                    aspect-ratio:16/9;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    position:relative;
+                    overflow:hidden;">
+          <!-- Overlay texto -->
+          <div style="position:absolute; bottom:20px; left:20px; right:20px;">
+            <p style="font-family:'Bebas Neue',sans-serif;
+                       font-size:1.3rem;
+                       color:#fff;
+                       line-height:1.2;
+                       letter-spacing:1px;">
+              Así son<br>nuestros<br>letreros<br>iluminados
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="col-md-6">
+        <div style="background:#2e2e2e;
+                    border-radius:14px;
+                    aspect-ratio:16/9;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    position:relative;
+                    overflow:hidden;">
+          <div style="position:absolute; bottom:20px; left:20px; right:20px;">
+            <p style="font-family:'Barlow',sans-serif;
+                       font-size:1rem;
+                       color:#fff;
+                       font-weight:600;
+                       line-height:1.3;">
+              Tenemos gran <span style="color:#7FB52C;">variedad</span><br>
+              de soluciones<br>para tu<br>comunicación<br>corporativa
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- /EDICIÓN VIDEO -->
+
+
+<!-- ============================================================
+     FOOTER: REDES SOCIALES Y CONTACTOS
+============================================================ -->
+<footer id="contactos"
+        style="background-color:#7FB52C; padding:60px 30px; text-align:center;">
+
+  <h2 style="font-family:'Bebas Neue',sans-serif;
+             font-size:clamp(2rem,6vw,3.5rem);
+             color:#1a1a1a;
+             letter-spacing:3px;
+             line-height:1.1;
+             margin-bottom:30px;">
+    Redes Sociales<br>y mis<br>contactos
+  </h2>
+
+  <!-- Íconos redes (Unicode placeholder) -->
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;">
+    <a href="#"
+       style="background:#1a1a1a;
+              color:#7FB52C;
+              width:50px; height:50px;
+              border-radius:50%;
+              display:flex; align-items:center; justify-content:center;
+              text-decoration:none;
+              font-size:1.3rem;
+              font-weight:700;
+              transition:transform .2s;"
+       onmouseover="this.style.transform='scale(1.15)'"
+       onmouseout="this.style.transform='scale(1)'">
+      in
+    </a>
+    <a href="#"
+       style="background:#1a1a1a;
+              color:#7FB52C;
+              width:50px; height:50px;
+              border-radius:50%;
+              display:flex; align-items:center; justify-content:center;
+              text-decoration:none;
+              font-size:1.3rem;
+              transition:transform .2s;"
+       onmouseover="this.style.transform='scale(1.15)'"
+       onmouseout="this.style.transform='scale(1)'">
+      &#xe0c9;
+    </a>
+    <a href="#"
+       style="background:#1a1a1a;
+              color:#7FB52C;
+              width:50px; height:50px;
+              border-radius:50%;
+              display:flex; align-items:center; justify-content:center;
+              text-decoration:none;
+              font-size:1.3rem;
+              transition:transform .2s;"
+       onmouseover="this.style.transform='scale(1.15)'"
+       onmouseout="this.style.transform='scale(1)'">
+      yt
+    </a>
+  </div>
+
+  <!-- Email / Teléfono placeholder -->
+  <p style="color:#1a1a1a; font-family:'Barlow',sans-serif; font-size:1rem; font-weight:600;">
+    contacto@maxdiseñador.com &nbsp;|&nbsp; +52 442 000 0000
+  </p>
+
+</footer>
+<!-- /FOOTER -->
+
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script src="js/popper-2.11.8.min.js"></script>
+<script src="js/bootstrap-5.3.8.js"></script>
+
+</body>
 </html>
